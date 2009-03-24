@@ -128,10 +128,10 @@ describe <%= controller_class_name %>Controller do
       route_for(:controller => '<%= controller_controller_name %>', :action => 'new').should == "/login"
     end
     it "should route the create <%= controller_controller_name %> correctly" do
-      route_for(:controller => '<%= controller_controller_name %>', :action => 'create').should == "/<%= controller_routing_path %>"
+      route_for(:controller => '<%= controller_controller_name %>', :action => 'create').should == {:path => "/<%= controller_routing_path %>", :method => :post}
     end
     it "should route the destroy <%= controller_controller_name %> action correctly" do
-      route_for(:controller => '<%= controller_controller_name %>', :action => 'destroy').should == "/logout"
+      route_for(:controller => '<%= controller_controller_name %>', :action => 'destroy').should == {:path => "/logout", :method => :delete}
     end
   end
   
